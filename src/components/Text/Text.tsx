@@ -1,7 +1,8 @@
+import React from 'react';
+import { PounceComponentProps } from '../../system';
 import { __DEV__ } from '../../utils/helpers';
-import { pounce } from '../../system';
 
-export type TextProps = React.ComponentProps<typeof Text>;
+export type TextProps<T extends React.ElementType = any> = PounceComponentProps<T>;
 
 /**
  * Extends <a href="/#/Box">Box</a>
@@ -10,7 +11,9 @@ export type TextProps = React.ComponentProps<typeof Text>;
  * heading or a title, this component is what you need.
  *
  * */
-const Text = pounce('p');
+const Text: React.FC<TextProps> = ({ children }) => {
+  return <p>{children}</p>;
+};
 
 export default Text;
 

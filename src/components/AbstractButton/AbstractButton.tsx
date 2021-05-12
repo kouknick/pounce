@@ -1,20 +1,14 @@
 import React from 'react';
-import { pounce } from '../../system';
+import { PounceComponentProps } from '../../system';
 import { __DEV__ } from '../../utils/helpers';
 
-export type AbstractButtonProps = React.ComponentProps<typeof AbstractButton>;
+export type AbstractButtonProps<T extends React.ElementType = any> = PounceComponentProps<T>;
 
-export const AbstractButton = pounce('button');
-
-// The component should render a button by default, with some default styles
-AbstractButton.defaultProps = {
-  type: 'button',
-  cursor: 'pointer',
-  color: 'gray-50' as const,
-  textDecoration: 'none',
-  backgroundColor: 'transparent' as const,
-  transition: 'all 0.1s linear',
-};
+export const AbstractButton = React.forwardRef<HTMLButtonElement, AbstractButtonProps>(
+  function AbstractButton({ children }, ref) {
+    return <button ref={ref}>{children}</button>;
+  }
+);
 
 export default AbstractButton;
 
