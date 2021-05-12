@@ -1,5 +1,5 @@
 {
-  "name": "pouncejs",
+  "name": "pouncejstest",
   "description": "A collection of UI components from Panther labs",
   "version": "0.0.0-semantically-released",
   "main": "dist/cjs/index.js",
