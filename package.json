@@ -1,5 +1,5 @@
 {
-  "name": "@kouknick/pouncejstest",
+  "name": "@ntragas/pouncejstest",
   "description": "A collection of UI components from Panther labs",
   "version": "1.0.0",
   "main": "dist/cjs/index.js",
